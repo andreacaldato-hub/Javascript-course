@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dom project</title>
+</head>
+
+<body>
+  <p>
+    YouTube Subscribe Button
+  </p>
+  <button onclick="subscribe()" class="js-subscribe-button">Subscribe</button>
+  <p>
+    Rokc Paper Scissors
+  </p>
+  <script>
+    function subscribe() {
+      const buttonElem = document.querySelector('.js-subscribe-button');
+      if (buttonElem.innerText === 'Subscribe') {
+        buttonElem.innerText = 'Subscribed';
+      }
+      else {
+        buttonElem.innerText = 'Subscribe'
+      }
+
+
+    }
+  </script>
+
+
+</body>
+
+</html>
