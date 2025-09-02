@@ -6,13 +6,34 @@
 </head>
 
 <body>
-  <p>
-    YouTube Subscribe Button
-  </p>
-  <button onclick="subscribe()" class="js-subscribe-button">Subscribe</button>
-  <p>
-    Rokc Paper Scissors
-  </p>
+  <div>
+    <p>
+      YouTube Subscribe Button
+    </p>
+    <button onclick="subscribe()" class="js-subscribe-button">Subscribe</button>
+
+  </div>
+  <div>
+
+    <p>
+      Amazon Shipping Calculator
+    </p>
+    <p>
+      Orders under $40 = +$10 shipping
+    </p>
+    <p>
+      Orders over $40 = FREE shipping
+    </p>
+    <div>
+      <input type="" name="" placeholder="Cost of order" class="js-order-amount">
+      <button onclick="calculateShipping()">Calculate</button>
+      <p class="js-shipping"></p>
+    </div>
+  </div>
+  <div>
+    <p>Rock Paper Scissors</p>
+    <a href="http://localhost:3164/09-rock-paper-scissors.html">Click Here</a>
+  </div>
   <script>
     function subscribe() {
       const buttonElem = document.querySelector('.js-subscribe-button');
@@ -24,6 +45,20 @@
       }
 
 
+    }
+    function calculateShipping() {
+      const orderAmountElem = document.querySelector('.js-order-amount');
+      const orderAmount = Number(orderAmountElem.value);
+      let paragraphElem = document.querySelector('.js-shipping');
+
+      if (orderAmount < 40) {
+        paragraphElem.innerText = '$10';
+      }
+      else if (orderAmount >= 40) {
+        paragraphElem.innerText = 'FREE';
+      }
+      else {
+      }
     }
   </script>
 
