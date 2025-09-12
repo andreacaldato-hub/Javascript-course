@@ -2,13 +2,97 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link href="css/style.css" rel="stylesheet">
+  <title>Dom projects</title>
 </head>
+<style>
+  .subscribe-button {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: black;
+    border-radius: 50px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .is-subscribed {
+    background-color: #F0F0F0;
+    color: black;
+  }
+
+  .shipping-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .order-amount {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid;
+  }
+</style>
 
 <body>
+  <div>
+    <p>
+      YouTube Subscribe Button
+    </p>
+    <button onclick="subscribe()" class="js-subscribe-button subscribe-button">Subscribe</button>
+
+  </div>
+  <div>
+
+    <p>
+      Amazon Shipping Calculator
+    </p>
+    <div>
+      <input type="" name="" placeholder="Cost of order" class="js-order-amount order-amount">
+      <button onclick="calculateShipping()" class="js-shipping-button shipping-button">Calculate</button>
+      <p class="js-shipping"></p>
+    </div>
+  </div>
+  <div>
+    <p>Rock Paper Scissors</p>
+    <a href="http://localhost:3164/09-rock-paper-scissors.html">Click Here</a>
+  </div>
+  <script>
+    function subscribe() {
+      const buttonElem = document.querySelector('.js-subscribe-button');
+      if (buttonElem.innerText === 'Subscribe') {
+        buttonElem.innerText = 'Subscribed';
+        buttonElem.classList.add('is-subscribed');
+      }
+      else {
+        buttonElem.innerText = 'Subscribe'
+        buttonElem.classList.remove('is-subscribed');
+      }
+
+
+    }
+    function calculateShipping() {
+      const orderAmountElem = document.querySelector('.js-order-amount');
+      const orderAmount = Number(orderAmountElem.value);
+      let paragraphElem = document.querySelector('.js-shipping');
+      let total = 0;
+
+      if (orderAmount < 40) {
+        total = orderAmount + 10;
+        paragraphElem.innerText = '$' + total + ' - Shipping Cost Included';
+      }
+      else if (orderAmount >= 40) {
+        paragraphElem.innerText = '$' + orderAmount + ' - Free Shipping';
+      }
+      else {
+      }
+    }
+  </script>
+
 
 </body>
 
