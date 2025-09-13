@@ -4,26 +4,14 @@ wins = 0;
 losses = 0
 ties = 0
 document.querySelector('.js-rock').addEventListener('click', () => {
-  let choice = 'rock';
-  let result = playGame(choice);   // returns the result
-  let compChoice = randChoice();   // or however you get computer choice
-  printResult(result);
-  printChoices(choice, compChoice);
+  playGame('rock');   // returns the result
 });
 document.querySelector('.js-paper').addEventListener('click', () => {
-  let choice = 'paper';
-  let result = playGame(choice);   // returns the result
-  let compChoice = randChoice();   // or however you get computer choice
-  printResult(result);
-  printChoices(choice, compChoice);
+  playGame('paper');   // returns the result
 });
 
 document.querySelector('.js-scissors').addEventListener('click', () => {
-  let choice = 'scissors';
-  let result = playGame(choice);   // returns the result
-  let compChoice = randChoice();   // or however you get computer choice
-  printResult(result);
-  printChoices(choice, compChoice);
+  playGame('scissors');   // returns the result
 });
 document.querySelector('.js-reset').addEventListener('click', () => {
   resetScores();
@@ -56,6 +44,9 @@ function playGame(choice) {
     losses++
     updateScores()
   }
+  printResult(result)
+  printChoices(choice, compChoice)
+  updateScores()
   return result, compChoice
 
 }
