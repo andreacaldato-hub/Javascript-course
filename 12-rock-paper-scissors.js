@@ -3,6 +3,35 @@ choices = ['rock', 'paper', 'scissors']
 wins = 0;
 losses = 0
 ties = 0
+document.querySelector('.js-rock').addEventListener('click', () => {
+  let choice = 'rock';
+  let result = playGame(choice);   // returns the result
+  let compChoice = randChoice();   // or however you get computer choice
+  printResult(result);
+  printChoices(choice, compChoice);
+});
+document.querySelector('.js-paper').addEventListener('click', () => {
+  let choice = 'paper';
+  let result = playGame(choice);   // returns the result
+  let compChoice = randChoice();   // or however you get computer choice
+  printResult(result);
+  printChoices(choice, compChoice);
+});
+
+document.querySelector('.js-scissors').addEventListener('click', () => {
+  let choice = 'scissors';
+  let result = playGame(choice);   // returns the result
+  let compChoice = randChoice();   // or however you get computer choice
+  printResult(result);
+  printChoices(choice, compChoice);
+});
+document.querySelector('.js-reset').addEventListener('click', () => {
+  resetScores();
+});
+document.querySelector('.js-autoPlay').addEventListener('click', () => {
+  autoPlay();
+});
+
 function randChoice() {
   const compChoice = choices[Math.floor(Math.random() * choices.length)];
   return compChoice
