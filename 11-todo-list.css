@@ -1,0 +1,34 @@
+.todo-input-2 {
+  border: 1px solid;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.date {
+  padding: 8px;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.add {
+  padding: 10px 35px;
+  border: 1px solid;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+}
+
+.todo-items {
+  display: flex;
+}
+
+.delete-button {
+  margin-top: 6px;
+  margin-left: 56px;
+  cursor: pointer;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  height: 37px;
+}
