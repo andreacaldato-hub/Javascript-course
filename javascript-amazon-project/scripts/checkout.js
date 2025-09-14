@@ -1,3 +1,4 @@
+import { formatCurrency } from "./utils/money.js";
 import { cart } from "../data/cart.js";
 import { products } from "../data/products.js";
 let container = document.querySelector(".js-order-summary")
@@ -11,10 +12,6 @@ cart.forEach(item => {
 
     }
   })
-
-
-
-
   html += `
   <div class="cart-item-container">
     <div class="delivery-date">
@@ -29,7 +26,7 @@ cart.forEach(item => {
             ${matchingProduct.name}
           </div>
           <div class="product-price">
-            $${matchingProduct.priceCents / 100}
+            $${formatCurrency(matchingProduct.priceCents)}
           </div>
           <div class="product-quantity">
             <span>
@@ -49,7 +46,7 @@ cart.forEach(item => {
             Choose a delivery option:
           </div>
           <div class="delivery-option">
-            <input type="radio" checked class="delivery-option-input" name="delivery-option-1">
+            <input type="radio" checked class="delivery-option-input" name="delivery-option-${matchingProduct.id}">
               <div>
                 <div class="delivery-option-date">
                   Tuesday, June 21
@@ -60,7 +57,7 @@ cart.forEach(item => {
               </div>
           </div>
           <div class="delivery-option">
-            <input type="radio" class="delivery-option-input" name="delivery-option-1">
+            <input type="radio" class="delivery-option-input" name="delivery-option-${matchingProduct.id}">
               <div>
                 <div class="delivery-option-date">
                   Wednesday, June 15
@@ -71,7 +68,7 @@ cart.forEach(item => {
               </div>
           </div>
           <div class="delivery-option">
-            <input type="radio" class="delivery-option-input" name="delivery-option-1">
+            <input type="radio" class="delivery-option-input" name="delivery-option-${matchingProduct.id}">
               <div>
                 <div class="delivery-option-date">
                   Monday, June 13
@@ -84,7 +81,6 @@ cart.forEach(item => {
         </div>
     </div>
   </div>`
-
 
 });
 container.innerHTML = html
