@@ -28,7 +28,8 @@ export function addToCart(productId) {
   if (!found) {
     cart.push({
       productId: productId,
-      quantity: 1
+      quantity: 1,
+      deliveryOptionId: "1"
     })
   }
   console.log(cart)
